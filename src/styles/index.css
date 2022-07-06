@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu {
+    @apply opacity-0 absolute top-12 left-0 flex flex-col gap-4 px-4 bg-white z-10 w-full max-h-0 h-0 overflow-hidden   ease-in-out duration-200;
+
+}
+
+
+
+.menu-active {
+   max-height: 999rem;
+   height: calc((100vh - 50px) - 50vh);
+   overflow-y: auto;
+   @apply p-4 shadow-lg shadow-slate-600/30 opacity-100;
+}
