@@ -1,0 +1,27 @@
+.nav {
+    @apply relative flex h-12 px-4 mx-auto font-semibold max-w-7xl xl:px-0;
+}
+
+.nav-wrapper {
+    @apply text-gray-300 bg-blue-900;
+}
+
+.nav-link {
+    @apply duration-300 ease-in-out hover:text-gray-100;
+}
+
+.nav-menu {
+    @apply overflow-hidden absolute md:static left-0 flex flex-col items-center justify-between gap-8 bg-blue-900 w-[100vw] top-12 transition-[padding_0s] opacity-0 md:max-h-screen md:flex-row md:bg-none md:p-0   md:opacity-100 md:bg-transparent;
+   
+}
+
+.nav-menu:not(.active) {
+    max-height: 0px;
+    @apply md:max-h-screen;
+}
+
+.nav-menu.active {
+    max-height: 999rem !important;
+    @apply p-4 opacity-100;
+    
+}

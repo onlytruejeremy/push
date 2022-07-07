@@ -1,5 +1,5 @@
 import { ElementType } from "react";
-import { RouteObject } from "react-router-dom";
+import { RouteObject, Navigate } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "./pages/Home";
 
@@ -11,6 +11,10 @@ const routes: RObject[] = [
   {
     element: <Home />,
     path: "/",
+  },
+  {
+    element: <Navigate to="/" />,
+    path: "*",
   },
 ];
 

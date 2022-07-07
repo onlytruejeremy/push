@@ -1,39 +1,49 @@
-import React, { FC } from "react";
-import Link from "../Link/Link";
-import { FiVideo, FiMenu, FiX } from "react-icons/fi";
+import React from "react";
+import { FiVideo, FiMenu, FiX, FiArrowRight } from "react-icons/fi";
 import useToggle from "../../hooks/useToggle";
+import Link from "../Link/Link";
+import "./NavBar.css";
 const NavBar = () => {
   const { open, toggle } = useToggle();
   return (
-    <div className="w-100">
-      <nav className="h-12 gap-8 relative flex flex-row items-center justify-between text-gray-600 font-semibold px-4 max-w-7xl mx-auto xl:px-0">
-        <div className="">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1 font-bold text-xl"
-          >
-            <FiVideo />
-            <span>Meeters</span>
-          </Link>
-        </div>
-        <div className={`menu ${open && "menu-active"}`}>
-          <Link href="/">Overview</Link>
-          <Link href="/">How It Works</Link>
-          <Link href="/">Plans &amp; Pricing</Link>
-        </div>
-        <div className="nav-right inline-flex gap-4 basis-full justify-end">
-          <Link href="/">Sign In</Link>
-          <Link href="/">Join Meeting</Link>
-          <Link href="/">Get Started</Link>
+    <header className="nav-wrapper whitespace-nowrap">
+      <nav className="nav">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 mr-8 text-xl"
+        >
+          <FiVideo className="text-2xl" />
+          <span>Push</span>
+        </Link>
+        <div className={`nav-menu ${open && "active"}`}>
+          <div className="flex flex-col w-full gap-4 md:flex-row">
+            <Link href="#" className="nav-link">
+              Overview
+            </Link>
+            <Link href="#" className="nav-link">
+              FAQs
+            </Link>
+          </div>
+          <div className="flex flex-col w-full gap-4 md:items-center md:flex-row md:justify-end">
+            <Link href="/login" className="nav-link">
+              Sign In
+            </Link>
+            <Link href="/join" className="btn btn-primary">
+              <span>Join Meeting</span>
+            </Link>
+            <Link href="/register" className="btn btn-secondary">
+              Get Started
+            </Link>
+          </div>
         </div>
         <button
-          className="hover:text-gray-900 text-xl"
           onClick={toggle}
+          className="ml-auto text-2xl hover:text-gray-200 md:hidden"
         >
           {open ? <FiX /> : <FiMenu />}
         </button>
       </nav>
-    </div>
+    </header>
   );
 };
 
